@@ -41,7 +41,7 @@ function Enable-SocialMediaBlock {
         Copy-Item -Path $Script:HostsPath -Destination $backupPath
     }
 
-    $blockLines = $Domains | ForEach-Object { "0.0.0.0`t$_" }
+    $blockLines = $Domains | ForEach-Object { "0.0.0.0`t$_", "::1`t$_" }
     $blockText = "$Script:MarkerStart`r`n" + ($blockLines -join "`r`n") + "`r`n$Script:MarkerEnd"
     $newContent = $cleaned.TrimEnd() + "`r`n`r`n" + $blockText + "`r`n"
 

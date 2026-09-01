@@ -91,6 +91,7 @@ ficus_enable_block() {
     printf '%s\n\n%s\n' "$cleaned" "$MARKER_START"
     for d in "${domains[@]}"; do
       printf '0.0.0.0\t%s\n' "$d"
+      printf '::1\t%s\n' "$d"
     done
     printf '%s\n' "$MARKER_END"
   } > "$HOSTS_PATH"
