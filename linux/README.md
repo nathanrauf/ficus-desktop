@@ -40,6 +40,10 @@ In the GUI, use "Edit Sites" to check/uncheck domains or add your own — this i
 
 ## Known limitations
 
-Same caveats as the [Windows version](../windows/README.md): browsers with Secure DNS/DNS-over-HTTPS enabled can bypass `/etc/hosts`, and this only affects the machine it's run on. Also, DNS caching varies a lot across distros, so the cache-flush step is best-effort and may not do anything on your particular setup — that's fine, it doesn't affect whether the block actually works.
+- **Requires admin/sudo rights each time you toggle it.** That's intentional, but it also means anyone else with sudo access on the machine can turn the block off just as easily as you can turn it on.
+- **Browsers with Secure DNS (DNS-over-HTTPS) enabled can bypass `/etc/hosts` entirely**, since they resolve domains themselves instead of asking Linux. If a blocked site still loads, turn that off. In Chrome: Settings → Privacy and security → Security → "Use secure DNS" → off. In Firefox: Settings → Privacy & Security → DNS over HTTPS → off.
+- **Apps that hardcode IP addresses instead of using domain names** won't be affected. This is rare in practice.
+- DNS caching varies a lot across distros, so the cache-flush step is best-effort and may not do anything on your particular setup — that's fine, it doesn't affect whether the block actually works.
+- This only blocks the Linux machine it's run on. It doesn't touch your phone or anything else on the network.
 
 See the [repo root](../README.md) for what Ficus is and licensing.

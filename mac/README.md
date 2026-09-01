@@ -2,7 +2,7 @@
 
 Blocks social media sites on macOS, at the OS level, the same way the [Windows version](../windows/) does: by redirecting domains to nowhere in `/etc/hosts`, so it applies across every browser at once.
 
-Built and syntax-checked on a Windows machine, not yet run on an actual Mac. If something's off, please open an issue.
+Verified working on a real Mac: the CLI blocks and unblocks correctly and `Ficus.applescript` compiles cleanly into a double-clickable app. If something's off, please open an issue.
 
 ## Usage
 
@@ -38,6 +38,9 @@ In the GUI, use "Edit Sites" to check/uncheck domains or add your own — this i
 
 ## Known limitations
 
-Same caveats as the [Windows version](../windows/README.md): browsers with Secure DNS/DNS-over-HTTPS enabled can bypass `/etc/hosts`, and this only affects the machine it's run on.
+- **Requires admin rights each time you toggle it.** That's intentional, but it also means anyone else with an admin account on the machine can turn the block off just as easily as you can turn it on.
+- **Browsers with Secure DNS (DNS-over-HTTPS) enabled can bypass `/etc/hosts` entirely**, since they resolve domains themselves instead of asking macOS. If a blocked site still loads, turn that off. In Chrome: Settings → Privacy and security → Security → "Use secure DNS" → off. In Firefox: Settings → Privacy & Security → DNS over HTTPS → off. Safari doesn't have its own DoH toggle, but if iCloud Private Relay is turned on, it can route DNS around the hosts file too — turn it off under System Settings → [your name/Apple ID] → iCloud → Private Relay.
+- **Apps that hardcode IP addresses instead of using domain names** won't be affected. This is rare in practice.
+- This only blocks the Mac it's run on. It doesn't touch your phone or anything else on the network.
 
 See the [repo root](../README.md) for what Ficus is and licensing.
