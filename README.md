@@ -24,13 +24,13 @@ See [windows/README.md](windows/README.md) for setup and usage.
 
 ## macOS
 
-Same idea via `/etc/hosts`, with an AppleScript-based GUI and a command-line script. Built on a Windows machine and not yet run on real hardware, so treat it as early and file an issue if something's wrong.
+Same idea via `/etc/hosts`, with an AppleScript-based GUI and a command-line script.
 
 See [mac/README.md](mac/README.md) for setup and usage.
 
 ## Linux
 
-Same idea again via `/etc/hosts`, with a `zenity`-based GUI and a command-line script. Also built on a Windows machine and not yet run on a real Linux box, same caveat as macOS.
+Same idea again via `/etc/hosts`, with a `zenity`-based GUI and a command-line script.
 
 See [linux/README.md](linux/README.md) for setup and usage.
 
