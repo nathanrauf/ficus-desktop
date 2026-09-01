@@ -2,7 +2,7 @@
 
 Blocks social media sites on Linux, at the OS level, the same way the [Windows](../windows/) and [macOS](../mac/) versions do: by redirecting domains to nowhere in `/etc/hosts`, so it applies across every browser at once.
 
-Built and syntax-checked on a Windows machine, not yet run on an actual Linux box. If something's off for your distro, please open an issue.
+If something's off for your distro, please open an issue.
 
 ## Requirements
 
