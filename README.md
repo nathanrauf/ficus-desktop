@@ -6,11 +6,15 @@ Blocks social media at the OS level so it can't be undone by just switching brow
 
 This project is an extension of the [Ficus iOS app](https://somewhatproductive.com/ficus/), which makes it difficult to exit apps on your phone. Ficus-desktop has the same goal in mind this repo works entirely on its own; you don't need the iOS app to use it.
 
+## Download
+
+Grab the zip for your platform from the [Releases](../../releases) page — each one is just that platform's folder, so you only download what you need.
+
 | Platform | Status | |
 |---|---|---|
 | Windows | Available | [windows/](windows/) |
-| macOS | Planned | [mac/](mac/) |
-| Linux | Planned | [linux/](linux/) |
+| macOS | Available | [mac/](mac/) |
+| Linux | Available | [linux/](linux/) |
 
 ## Windows
 
@@ -20,11 +24,15 @@ See [windows/README.md](windows/README.md) for setup and usage.
 
 ## macOS
 
-Not built yet. The plan is the same idea adapted to macOS, most likely via `/etc/hosts` plus a small menu bar app rather than a `System32` hosts file and WinForms GUI, since the platforms don't share much below the concept level. See [mac/](mac/) once it exists.
+Same idea via `/etc/hosts`, with an AppleScript-based GUI and a command-line script. Built on a Windows machine and not yet run on real hardware, so treat it as early and file an issue if something's wrong.
+
+See [mac/README.md](mac/README.md) for setup and usage.
 
 ## Linux
 
-Not built yet. Same underlying idea, likely via `/etc/hosts` again since that mechanism is shared with macOS, with the GUI question depending on which desktop environments end up mattering most. See [linux/](linux/) once it exists.
+Same idea again via `/etc/hosts`, with a `zenity`-based GUI and a command-line script. Also built on a Windows machine and not yet run on a real Linux box, same caveat as macOS.
+
+See [linux/README.md](linux/README.md) for setup and usage.
 
 ## License
 

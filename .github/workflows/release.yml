@@ -1,0 +1,32 @@
+name: Release
+
+# Push a tag like v0.2.0 and this zips up each platform folder and attaches
+# them to a new GitHub release, so people can grab just the one they need.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zip each platform folder
+        run: |
+          mkdir -p dist
+          zip -r "dist/ficus-windows-${GITHUB_REF_NAME}.zip" windows
+          zip -r "dist/ficus-macos-${GITHUB_REF_NAME}.zip" mac
+          zip -r "dist/ficus-linux-${GITHUB_REF_NAME}.zip" linux
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.zip \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes
