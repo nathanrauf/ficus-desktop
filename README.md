@@ -4,7 +4,7 @@
 
 Blocks social media at the OS level so it can't be undone by just switching browsers or apps.
 
-This project is an extension of the [Ficus iOS app](https://somewhatproductive.com/ficus/), which makes it difficult to exit apps on your phone. Ficus-desktop has the same goal in mind this repo works entirely on its own; you don't need the iOS app to use it.
+This project is an extension of the [Ficus iOS app](https://somewhatproductive.com/ficus/), which makes it difficult to exit apps on your phone. Ficus-desktop has the same goal in mind but this repo works entirely on its own; you don't need the iOS app to use it.
 
 ## Download
 
