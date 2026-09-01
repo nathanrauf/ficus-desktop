@@ -2,7 +2,7 @@
 
 Blocks social media sites on macOS, at the OS level, the same way the [Windows version](../windows/) does: by redirecting domains to nowhere in `/etc/hosts`, so it applies across every browser at once.
 
-Verified working on a real Mac: the CLI blocks and unblocks correctly and `Ficus.applescript` compiles cleanly into a double-clickable app. If something's off, please open an issue.
+If something's off, please open an issue.
 
 ## Usage
 
