@@ -33,6 +33,7 @@ function Enable-SocialMediaBlock {
     param([string[]]$Domains = $Script:DefaultDomains)
 
     $content = Get-Content -Path $Script:HostsPath -Raw
+    if ($null -eq $content) { $content = "" }
     $pattern = "(?s)\r?\n?" + [regex]::Escape($Script:MarkerStart) + ".*?" + [regex]::Escape($Script:MarkerEnd) + "\r?\n?"
     $cleaned = [regex]::Replace($content, $pattern, "`r`n")
 
@@ -51,6 +52,7 @@ function Enable-SocialMediaBlock {
 
 function Disable-SocialMediaBlock {
     $content = Get-Content -Path $Script:HostsPath -Raw
+    if ($null -eq $content) { $content = "" }
     $pattern = "(?s)\r?\n?" + [regex]::Escape($Script:MarkerStart) + ".*?" + [regex]::Escape($Script:MarkerEnd) + "\r?\n?"
     $cleaned = [regex]::Replace($content, $pattern, "`r`n")
 
